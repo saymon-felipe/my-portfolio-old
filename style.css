@@ -33,35 +33,113 @@ header .nav-link:hover {
     color: black;
 }
 
+.sombra {
+    box-shadow: rgb(182, 182, 182) 2px 2px 3px;
+}
 
+.mouseover:hover {
+    position: relative;
+    animation-name: over;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+}
 
-/*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
-    .tamanho {
-        width: 100px;
+@keyframes over {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -5px;
     }
 }
 
-/*Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) {
-    .tamanho {
-        width: 200px;
-    }
- }
+#sites-cursos a, #sites-principais a {
+    text-decoration: none;
+}
 
-/*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) { 
-    .tamanho {
-        width: 300px;
-    }
- }
+#sites-cursos a {
+    color: white;
+}
 
-/*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) { 
+#sites-principais a {
+    color: black;
+}
+
+@media (min-width: 200px) {
+    .tamanho {
+        width: 290px;
+    }
+}
+
+@media (min-width: 576px) {
+    .tamanho {
+        width: 350px;
+    }
+}
+
+@media (min-width: 800px) {
     .tamanho {
         width: 500px;
     }
- }
+}
 
-/*Extra large devices (large desktops)
-No media query since the extra-large breakpoint has no upper bound on its width*/
+footer {
+    background: black;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/*FIM PÁGINA INICIAL*/
+
+#sobre-mim {
+    color: black;
+    margin-top: 110px;
+}
+
+.sobre-mim {
+    background: white;
+    border-radius: 20px;
+}
+
+@media (min-width: 200px) {
+    #sobre-mim img {
+        width: 290px;
+    }
+    legend, h3, h4, h6 {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 576px) {
+    #sobre-mim img {
+        width: 350px;
+    }
+}
+
+@media (min-width: 800px) {
+    #sobre-mim img {
+        width: 500px;
+    }
+}
+
+#sobre-mim h6 {
+    color: rgb(71, 71, 71);
+}
+
+#formacoes {
+    width: 180px;
+}
+
+#conhecimentos {
+    width: 220px;
+}
