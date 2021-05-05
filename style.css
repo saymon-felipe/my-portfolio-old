@@ -277,12 +277,12 @@ section a:hover#linkedin {
 }
 
 #botao {
-    background: #29AC00;
+    background: #2ec700;
     border: none;
 }
 
 #botao:hover {
-    color: white;
+    color: rgb(247, 247, 247);
 }
 
 #section-contato a {
@@ -295,7 +295,7 @@ section a:hover#linkedin {
 }
 
 #section-contato h3 {
-    font-size: 150%;
+    font-size: 300%;
 }
 
 @media (min-width: 200px) {
@@ -312,7 +312,7 @@ section a:hover#linkedin {
 
 @media (min-width: 490px) {
     #section-contato h3 {
-        font-size: 150%;
+        font-size: 315%;
     }
     #botao {
         width: 330px;
