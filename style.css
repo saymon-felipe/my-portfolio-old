@@ -12,11 +12,27 @@ body {
 
 header {
     background: black;
+}
+
+#nav {
     height: 60px;
+}
+
+#navegacao {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 10px;   
+}
+
+button:focus {
+    outline: black;
 }
 
 header .nav-link {
     color: rgb(196, 196, 196);
+}
+
+#cabecalho i {
+    color: white;
 }
 
 header .nav-link:hover {
@@ -26,6 +42,10 @@ header .nav-link:hover {
 
 #alinhamento {
     height: 100%;
+}
+
+#alinhamento h1, #alinhamento p {
+    font-weight: 400;
 }
 
 #sites-principais {
@@ -70,11 +90,26 @@ header .nav-link:hover {
     .tamanho {
         width: 290px;
     }
+    #nav {
+        margin-top: -8px;
+    }
+    #alinhamento h1 {
+        font-size: 300%;
+    }
+    #alinhamento p {
+        font-size: 150%;
+    }
 }
 
 @media (min-width: 576px) {
     .tamanho {
         width: 350px;
+    }
+    #nav {
+        margin-top: 0;
+    }
+    #alinhamento h1 {
+        font-size: 500%;
     }
 }
 
@@ -115,14 +150,41 @@ footer a:hover {
     #sobre-mim img {
         width: 290px;
     }
-    legend, h3, h4, h6 {
-        font-size: 120%;
+    legend, h1, p, h3, h4, h6 {
+        font-size: 80%;
+    }
+    .container-rodape h4, .container-rodape a, .container-rodape ul li a {
+        text-align: center;
+    }
+    #formulario h3, #formulario h4, #formulario h6 {
+        font-size: 0.9em;
+    }
+    #formulario legend {
+        font-size: 0.8em;
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 490px) {
     #sobre-mim img {
         width: 350px;
+    }
+    legend, h1, p, h3, h4, h6 {
+        font-size: 102%;
+    }
+    #contato h4, #contato a, #contato ul li a {
+        text-align: left;
+    }
+    #redes-sociais h4, #redes-sociais a, #redes-sociais ul li a {
+        text-align: center;
+    }
+    #mapa-do-site h4, #mapa-do-site a, #mapa-do-site ul li a {
+        text-align: right;
+    }
+    #formulario h3, #formulario h4, #formulario h6 {
+        font-size: 1em;
+    }
+    #formulario legend {
+        font-size: 1em;
     }
 }
 
@@ -142,4 +204,88 @@ footer a:hover {
 
 #conhecimentos {
     width: 220px;
+}
+
+/*FIM SOBRE MIM*/
+
+.contato {
+    background: white;
+    border-radius: 20px;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    color: black;
+}
+
+#contato-container {
+    width: 100px;
+}
+
+.redes-sociais {
+    width: 140px;
+}
+
+#section-contato form fieldset {
+    width: 420px;
+}
+
+section a {
+    color: black;
+}
+
+section a:hover#facebook {
+    color: #1877F2;
+}
+
+section a:hover#instagram {
+    color: #eb4faf;
+}
+
+section a:hover#linkedin {
+    color: #0A66C2;
+}
+
+#botao {
+    background: #29AC00;
+    border: none;
+}
+
+#botao:hover {
+    color: white;
+}
+
+#section-contato a {
+    text-decoration: none;
+    color: black;
+}
+
+#section-contato .fa-4x {
+    font-size: 300%;
+}
+
+#section-contato h3 {
+    font-size: 150%;
+}
+
+@media (min-width: 200px) {
+    #section-contato fieldset h3 {
+        font-size: 100%;
+    }
+    #botao {
+        width: 220px;
+    }
+    #botao div {
+        font-size: 80%;
+    }
+}
+
+@media (min-width: 490px) {
+    #section-contato h3 {
+        font-size: 150%;
+    }
+    #botao {
+        width: 330px;
+    }
+    #botao div {
+        font-size: 100%;
+    }
 }

@@ -16,23 +16,22 @@
 
     <link rel="icon" href="imagens/icone-preto.png">
 
-    <title>Saymon Felipe - Contato</title>
+    <title>Saymon Felipe - Sobre mim</title>
   </head>
   <body>
 
-    <header class="d-flex align-items-center fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-sm">
+    <header id="cabecalho" class="d-flex align-items-center fixed-top">
+      <div id="nav" class="container">
+        <nav class="navbar navbar-expand-sm" id="nav" >
 
           <!-- Logo -->
           <a href="index.html" class="navbar-brand">
-            <img src="imagens/icone.png" width="80" alt="">
+            <img src="imagens/icone.png" width="60">
           </a>
     
           <!-- Menu Hamburguer -->
-          <button class="navbar-toggler" data-toggle="collapse" 
-          data-target="#navegacao">
-              <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao">
+            <i class="fas fa-bars fa-lg"></i>
           </button>
     
           <!-- navegacao -->
@@ -53,34 +52,70 @@
       </div>
     </header>
     
-   
+    <section id="section-contato">
+      <div class="container py-5 px-auto contato text-center">
+        <h3 class="display-4 mb-4">CONTATE-ME</h3>
+        <form id="formulario">
+          <div class="m-auto d-flex flex-wrap">
+            <fieldset  class="mx-auto my-4 p-3 text-center border">
+              <legend id="contato-container" class="border"><strong>CONTATO</strong></legend>
+              <h3><strong>E-Mail: </strong><a href="mailto:linnubr@gmail.com">linnubr@gmail.com</a></h3>
+              <h3><strong>Tel: </strong><a href="https://wa.me/55043996352536" target="_blank">(43) 9 9635-2536</a></h3>
+              
+            </fieldset>
+            <fieldset  class="mx-auto my-4 p-3 text-center border">
+              <legend class="border redes-sociais"><strong>REDES SOCIAIS</strong></legend>
+              <div class="d-flex justify-content-around mx-auto mt-2">
+                <a id="facebook" href="https://www.facebook.com/say.feli10" target="_blank">
+                  <i class="fab fa-facebook fa-4x"></i>
+                </a>
+                <a id="instagram" href="https://www.instagram.com/linnubr/" target="_blank">
+                  <i class="fab fa-instagram fa-4x"></i>
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/in/saymon-felipe-80b31a157/" target="_blank">
+                  <i class="fab fa-linkedin fa-4x"></i>
+                </a>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+        <a href="https://wa.me/55043996352536" target="_blank">
+          <button id="botao" class="btn btn-lg mt-5 mb-2 d-flex mx-auto flex-row align-self-center align-items-center justify-content-center" href="https://wa.me/55043996352536">
+            <div>
+              <h6>Inicie uma conversa agora!</h6>
+              <i class="fab fa-whatsapp fa-lg m-2"></i>
+            </div>
+          </button>
+        </a>
+      </div>
+    </section>
 
-   <footer class="py-5 text-center">
-     <div class="container d-flex flex-wrap justify-content-between">
-        <div class="text-left">
+    <footer class="py-5 text-center">
+      <div class="container d-flex flex-wrap justify-content-between justify-content-center container-rodape">
+        <div id="contato" class="text-left p-3 m-auto">
           <h4>CONTATO</h4>
           <a href="mailto:linnubr@gmail.com">linnubr@gmail.com</a> 
           <a href="https://wa.me/55043996352536" target="_blank">
             <h6>(43) 9 9635-2536</h6>
           </a>
         </div>
-        <div class="text-center">
+        <div id="redes-sociais" class="text-center p-3 m-auto">
           <h4>REDES SOCIAIS</h4>
           <div class="d-flex justify-content-between">
             <a href="https://www.facebook.com/say.feli10" target="_blank">
-              <i class="fab fa-facebook fa-3x"></i>
+              <i class="fab fa-facebook fa-2x"></i>
             </a>
             <a href="https://www.instagram.com/linnubr/" target="_blank">
-              <i class="fab fa-instagram fa-3x"></i>
+              <i class="fab fa-instagram fa-2x"></i>
             </a>
             <a href="https://www.linkedin.com/in/saymon-felipe-80b31a157/" target="_blank">
-              <i class="fab fa-linkedin fa-3x"></i>
+              <i class="fab fa-linkedin fa-2x"></i>
             </a>
           </div>
         </div>
-        <div>
+        <div id="mapa-do-site" class="p-3 m-auto">
           <h4>MAPA DO SITE</h4>
-          <div class="">
+          <div>
             <ul class="navbar-nav text-right">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
@@ -94,9 +129,9 @@
             </ul>
         </div>
         </div>
-     </div>
-     <h6 class="mt-5">&copy; Copyright 2021 - Saymon Felipe.</h6>
-   </footer>
+      </div>
+      <h6 class="mt-5">&copy; Copyright 2021 - Saymon Felipe.</h6>
+    </footer>
 
     <div> <!--SCRIPTS-->
       <!-- Optional JavaScript -->
