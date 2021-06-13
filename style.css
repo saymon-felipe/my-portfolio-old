@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    background: url(imagens/fundo.jpg) no-repeat center center;
+    background: url(imagens/fundo.jpg);
     background-attachment: fixed;
     background-size: cover;
     color: white;
