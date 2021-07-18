@@ -230,12 +230,31 @@ h5 {
     color: rgb(71, 71, 71);
 }
 
+#sobre-mim fieldset:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+#sobre-mim fieldset:hover legend {
+    background-color: rgb(77, 77, 77);
+    color:#fff;
+}
+
 #formacoes {
     width: 180px;
 }
 
 #conhecimentos {
     width: 220px;
+}
+
+#sobre-mim img.img-fluid {
+    border-radius: 10px;
+    transition: .2s;
+}
+
+#sobre-mim img.img-fluid:hover {
+    padding: 2px;
+    border-radius: 15px;
 }
 
 /*FIM SOBRE MIM*/
