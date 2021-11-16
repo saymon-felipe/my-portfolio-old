@@ -1,3 +1,9 @@
+:root {
+    --white:rgb(245, 245, 245);
+    --gray-high: rgba(226, 226, 226, 0.803);
+    --gray: rgba(163, 163, 163, 0.803);
+}
+
 html, body {
     height: 100%;
     overflow-x: hidden;
@@ -5,7 +11,7 @@ html, body {
 }
 
 body {
-    background: url(imagens/fundo.jpg);
+    background: url(../imagens/fundo.jpg);
     background-attachment: fixed;
     background-size: cover;
     color: white;
@@ -29,7 +35,36 @@ button:focus {
 }
 
 header .nav-link {
-    color: rgb(196, 196, 196);
+    color: var(--white);
+    padding: .3rem 1.3rem!important;
+}
+
+header .nav-item {
+    transition: all 0.4s;
+}
+
+header .nav-item:hover {
+    background: var(--gray);
+}
+
+header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
+    border-right: 1px solid var(--gray-high);
+}
+
+header .nav-item:nth-child(1) {
+    border-radius: 5px 0 0 5px;
+}
+
+header .nav-item:nth-child(3) {
+    border-radius: 0 5px 5px 0;
+}
+
+.navbar .navbar-brand {
+    transition: all 0.4s;
+}
+
+.navbar .navbar-brand:hover {
+    opacity: 0.8;
 }
 
 #cabecalho i {
@@ -55,33 +90,52 @@ header .nav-link:hover {
 }
 
 .sombra {
-    box-shadow: rgb(182, 182, 182) 2px 2px 3px;
+    box-shadow: 0 0 10px rgb(182, 182, 182);
+}
+
+.mouseover {
+    transition: all 0.4s;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .mouseover:hover {
-    position: relative;
-    animation-name: over;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; 
+    transform: translateY(-5px);
 }
 
-@keyframes over {
-    0% {
-        top: 0px;
-    }
-    100% {
-        top: -5px;
-    }
+.preview-item {
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.preview-item-left {
+    transform: translateX(-100vw);
+}
+
+.preview-item-right {
+    transform: translateX(100vw);
+}
+
+.animation-item {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #topo {
-    background: white;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     color: black;
     position: fixed;
     right: 50px;
     bottom: 50px;
-    padding: 15px;
+    transition: all 0.4s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#topo:hover {
+    background: var(--gray-high);
 }
 
 #sites-cursos a, #sites-principais a {
@@ -110,12 +164,10 @@ header .nav-link:hover {
         font-size: 150%;
     }
     #topo {
-        background: rgba(255, 255, 255, 0.5);
-        color: black;
-        position: fixed;
-        right: 10px;
-        bottom: 10px;
-        padding: 15px;
+        font-size: .8rem;
+        padding: 10px;
+        right: 25px;
+        bottom: 20px;
     }
 }
 
@@ -130,12 +182,10 @@ header .nav-link:hover {
         font-size: 500%;
     }
     #topo {
-        background: white;
-        color: black;
-        position: fixed;
         right: 50px;
         bottom: 50px;
         padding: 15px;
+        font-size: 1rem;
     }
 }
 
@@ -220,9 +270,20 @@ h5 {
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 767px) {
     #sobre-mim img {
         width: 500px;
+    }
+}
+
+.title-about, .title-contact {
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+
+@media (max-width: 870px) {
+    .title-about, .title-contact {
+        font-size: 2rem;
     }
 }
 
@@ -230,8 +291,14 @@ h5 {
     color: rgb(71, 71, 71);
 }
 
+#sobre-mim fieldset, #sobre-mim fieldset legend {
+    border-radius: 5px;
+    transition: all 0.4s;
+}
+
 #sobre-mim fieldset:hover {
     background-color: rgb(238, 238, 238);
+    cursor: text;
 }
 
 #sobre-mim fieldset:hover legend {
@@ -279,9 +346,19 @@ h5 {
     width: 420px;
 }
 
+#section-contato fieldset, #section-contato fieldset legend {
+    border-radius: 5px;
+}
+
+#section-contato fieldset:hover, #section-contato fieldset legend:hover {
+    cursor: text;
+}
+
 section a {
     color: black;
 }
+
+
 
 section a:hover#facebook {
     color: #1877F2;
@@ -313,10 +390,6 @@ section a:hover#linkedin {
     font-size: 300%;
 }
 
-#section-contato h3 {
-    font-size: 300%;
-}
-
 @media (min-width: 200px) {
     #section-contato fieldset h3 {
         font-size: 100%;
@@ -330,9 +403,6 @@ section a:hover#linkedin {
 }
 
 @media (min-width: 490px) {
-    #section-contato h3 {
-        font-size: 315%;
-    }
     #botao {
         width: 330px;
     }

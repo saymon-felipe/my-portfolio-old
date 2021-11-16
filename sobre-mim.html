@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!--LINK CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="fontawesome/css/all.css">
@@ -19,7 +19,6 @@
     <title>Saymon Felipe - Sobre mim</title>
   </head>
   <body>
-    <div id="topo-sobre-mim"></div>
     <header id="cabecalho" class="d-flex align-items-center fixed-top">
       <div id="nav" class="container">
         <nav class="navbar navbar-expand-sm" id="nav" >
@@ -38,7 +37,7 @@
           <div class="collapse navbar-collapse text-right" id="navegacao">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                      <a href="index.html#sites-principais" class="nav-link">Home</a>
+                      <a href="index.html" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item">
                       <a href="sobre-mim.html" class="nav-link">Sobre Mim</a>
@@ -52,16 +51,14 @@
       </div>
     </header>
    
-    
-
    <section id="sobre-mim">
        <div class="container sobre-mim my-5 py-5 text-center border">
-            <h3 class="display-4">SOBRE MIM</h3>
+            <h3 class="title-about">SOBRE MIM</h3>
             <div class="row d-flex align-items-center my-5 px-5">
                 <div class="col-md-6">
-                    <img src="imagens/foto.jpg" class="img-fluid" alt="">
+                    <img src="imagens/foto.jpg" class="img-fluid preview-item preview-item-left" alt="Foto de Saymon Felipe">
                 </div>
-                <div class="col-md-6 text-sm-center text-md-left pt-4 m-auto">
+                <div class="col-md-6 text-sm-center text-md-left pt-4 m-auto preview-item preview-item-right">
                     <h4>SAYMON FELIPE</h4>
                     <h6>20 anos, estudante e desenvolvedor<br>Front-End JÚNIOR.</h6>
                     <p class="mt-4">
@@ -73,13 +70,13 @@
                 </div>
             </div>
             <form id="formulario">
-                <fieldset  class="mx-5 my-4 p-3 border">
+                <fieldset class="mx-5 my-4 p-3 border preview-item preview-item-left">
                     <legend id="formacoes" class="border">FORMAÇÕES</legend>
                     <h3>Análise e Desenvolvimento de Sistemas</h3>
                     <h4>Ensino Superior - EAD Unicesumar</h4>
                     <span><h6><strong>STATUS: </strong>Em andamento - prev. término 2023</h6></span>
                 </fieldset>
-                <fieldset  class="mx-5 my-4 p-3 border">
+                <fieldset class="mx-5 my-4 p-3 border preview-item preview-item-right">
                     <legend id="conhecimentos" class="border">CONHECIMENTOS</legend>
                     <h4><strong>SOFTWARES:</strong></h4>
                     <h5>Windows, Word, Excel, Power BI, Photoshop e Sony Vegas.</h5>
@@ -96,10 +93,8 @@
             </form>
        </div>
    </section>
-   <div>
-    <a id="topo" href="sobre-mim.html#topo-sobre-mim">
-      <i class="fas fa-arrow-up fa-2x"></i>
-    </a>
+   <div id="topo">
+    <i class="fas fa-arrow-up fa-2x"></i>
   </div>
    <footer class="py-5 text-center">
     <div class="container d-flex flex-wrap justify-content-between justify-content-center container-rodape">
@@ -147,12 +142,12 @@
     <div> <!--SCRIPTS-->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="js/bootstrap.min.js"></script>
 
       <!--LINK SCRIPT-->
-      <script src="script.js"></script>
+      <script src="js/script.js"></script>
     </div>
   </body>
 </html>
