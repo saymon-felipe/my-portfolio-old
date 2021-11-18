@@ -1,4 +1,28 @@
-const url_api = "http://localhost:3000"
+let url_api;
+
+// Função para trocar ambiente da api
+function changeAmbient(ambient) {
+    const url_api_test = "http://localhost:3000";
+    const url_api_production = "https://saymon-portfolio-api.herokuapp.com";
+    switch (ambient) {
+        case "0": 
+            url_api = url_api_test;
+            break;
+        case "1":
+            url_api = url_api_production;
+            break;
+    }
+}
+
+// FUNÇÃO PARA TROCAR O AMBIENTE DA APLICAÇÃO
+//
+// Primeiro parâmetro será 0 ou 1, sendo que:
+// 0 - Ambiente de teste
+// 1 - Ambiente de produção
+// 
+// ==============================
+   changeAmbient(1);
+// ==============================
 
 function toggleBackground() {
     if ($("body").hasClass("background-1")) {
