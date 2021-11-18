@@ -1,3 +1,99 @@
+const url_api = "http://localhost:3000"
+
+function toggleBackground() {
+    if ($("body").hasClass("background-1")) {
+        $("body").removeClass("background-1");
+        $("body").addClass("background-2");
+    } else if ($("body").hasClass("background-2")) {
+        $("body").removeClass("background-2");
+        $("body").addClass("background-3");
+    } else if ($("body").hasClass("background-3")) {
+        $("body").removeClass("background-3");
+        $("body").addClass("background-1");
+    }
+}
+
+function countCharacters(source, target, response) { //Função conta os caracteres do campo de descrição de OS e retorna para a tela.
+    let characters = $(source).val();
+    let stringLength = characters.length;
+    if(stringLength > 2000) {
+        $(target).addClass("error");
+        $(response).addClass("error");
+        $(response).html("Máximo de caracteres atingidos!");
+        $(response).show();
+    } else {
+        $(target).removeClass("error");
+        $(response).removeClass("error");
+        $(response).html("");
+        $(response).hide();
+    }
+    $(target).html(`${characters.length} / 2000 caracteres.`);
+}
+
+if ($(document).length) {
+    setInterval(toggleBackground, 10000);
+}
+
+if ($(".contact-page").length) { // Funções que serão ativadas quando a página de contato carregar.
+
+    countCharacters("#message", ".characters-counter", ".response"); //Se inicia a contagem dos caracteres do campo de mensagem.
+
+    $("#message").on("keypress", () => { //Faz a contagem dos caracteres do campo de mensagem sempre quando pressiona alguma tecla.
+        countCharacters("#message", ".characters-counter", ".response");
+        $("#message").on("keyup", () => { //Faz a contagem dos caracteres do campo de mensagem sempre quando pressiona alguma tecla.
+            countCharacters("#message", ".characters-counter", ".response");
+        });
+    });
+
+    $("#contact-form").on("submit", e => {
+        e.preventDefault();
+
+        $("#send-form").find("span").html("");
+        $("#contact-form").find(".loading").show();
+        
+        let data = $("#contact-form").serializeArray().reduce(function (obj, item) { //Pega todos os dados do formulário e coloca em um objeto
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+
+        $(".form-input").attr("disabled", true);
+        $("#contact-form").find('.response').hide();
+        $("#send-form:hover").css("background", "#000");
+
+        $.ajax({
+            url: url_api + "/contact",
+            type: "POST",
+            data: data,
+            success: (res) => { //Se enviar a mensagem, a resposta no formulário é exibida.
+                $(".response").html(res.message);
+                $(".response").addClass("success");
+                $(".response").show();
+                setTimeout(() => {
+                    $(".response").hide();
+                }, 5000);
+            },
+            error: (xhr) => {
+                let error;
+                if (xhr.responseJSON != undefined) {
+                    error = xhr.responseJSON.mensagem;
+                } else {
+                    error = "Erro";
+                }
+                $("#contact-form").find('.response').html(error);
+                $("#contact-form").find('.response').addClass("error");
+                $("#contact-form").find('.response').show();
+                $("#contact-form").find(".loading").hide();
+            },
+            complete: () => {
+                $(".form-input").attr("disabled", false);
+                $(".form-input").val("");
+                $("#contact-form").find(".loading").hide();
+                $("#send-form span").html("enviar");
+            }
+        });
+    })
+}
+
 $("html, body").scroll(() => { // Mostra o botão de voltar ao topo se usuário tiver dado scroll na página
     let scroll = $("body").scrollTop();
     if (scroll > 150) {
@@ -8,7 +104,7 @@ $("html, body").scroll(() => { // Mostra o botão de voltar ao topo se usuário 
 });
 
 $("#topo").on("click", () => { // Botão de voltar ao topo.
-    $("body").animate({ scrollTop: 0 });
+    $("body").animate({ scrollTop: 0 }, "fast");
 });
 
 let previewItems = $(".preview-item"),
@@ -34,6 +130,8 @@ if(previewItems.length) {
       animeScroll();
     });
 }
+
+
 
 
 

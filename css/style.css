@@ -1,7 +1,67 @@
 :root {
     --white:rgb(245, 245, 245);
+    --gray-high-2: rgb(250, 250, 250);
     --gray-high: rgba(226, 226, 226, 0.803);
     --gray: rgba(163, 163, 163, 0.803);
+    --gray-low: rgb(72, 72, 72);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    margin-left: -7px;
+    background: #000;
+    position: absolute;
+    z-index: 3;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 7px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+}
+
+.carousel-inner {
+    z-index: 2;
+}
+
+.carousel-control {
+    opacity: 0;
+    padding: 1.5rem 2rem;
+    transition: all 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+    .carousel-control:hover {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.5!important;
+    }
+
+    .carousel-control:focus {
+        opacity: 0;
+    }
+
+.carousel-background {
+    background: #000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: -10rem;
+    z-index: 1;
+    width: 200vw;
+    height: 100%;
 }
 
 html, body {
@@ -11,10 +71,30 @@ html, body {
 }
 
 body {
+    color: white;
+    transition: all 1s;
+}
+
+section {
+    width: 101%;
+}
+
+.background-1 {
     background: url(../imagens/fundo.jpg);
+}
+
+.background-2 {
+    background: url(../imagens/fundo2.jpg);
+}
+
+.background-3 {
+    background: url(../imagens/fundo4.jpg);
+}
+
+.background-1, .background-2, .background-3 {
     background-attachment: fixed;
     background-size: cover;
-    color: white;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -44,11 +124,17 @@ header .nav-item {
 }
 
 header .nav-item:hover {
-    background: var(--gray);
+    background: var(--gray-low);
 }
 
 header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
-    border-right: 1px solid var(--gray-high);
+    border-right: 1px solid var(--gray-low);
+}
+
+@media (max-width: 575px) {
+    header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
+        border-right: none;
+    }
 }
 
 header .nav-item:nth-child(1) {
@@ -326,6 +412,101 @@ h5 {
 
 /*FIM SOBRE MIM*/
 
+.container-inputs {
+    margin-bottom: 2rem;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+    .container-inputs input {
+        height: 42px;
+    }
+
+#contact-form #send-form {
+    margin: 1rem auto 1.5rem;
+    height: 42px;
+    width: 150px;
+    cursor: pointer;
+    border: none;
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+    #contact-form #send-form:hover {
+    background: rgb(51, 51, 51);
+    }
+
+    #contact-form #send-form:active {
+    background: rgb(92, 92, 92);
+    }
+
+.container-inputs input, .container-inputs textarea {
+    margin: 5px 0;
+    border-radius: 5px;
+    outline: none;
+    background: var(--gray-high-2);
+    border: 1px solid var(--gray-high);
+    padding: .5rem 1.5rem;
+}
+
+.input-name-tel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .input-name-tel input {
+        width: 48%;
+    }
+
+@media (max-width: 767px) {
+    .input-name-tel {
+        flex-direction: column;
+    }
+    .input-name-tel input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 489px) {
+    #contact-form #send-form {
+        font-size: .8rem;
+        width: 120px;
+        height: 38px;
+    }
+}
+
+.form-footer {
+    width: 80%;
+    min-height: 30px;
+    margin: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+    .form-footer .characters-counter {
+        position: absolute;
+        right: 0;
+        text-align: start;
+    }
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
 .contato {
     background: white;
     border-radius: 20px;
@@ -357,8 +538,6 @@ h5 {
 section a {
     color: black;
 }
-
-
 
 section a:hover#facebook {
     color: #1877F2;
@@ -408,5 +587,28 @@ section a:hover#linkedin {
     }
     #botao div {
         font-size: 100%;
+    }
+}
+
+/* LOADING */
+
+.loading {
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    margin: auto;
+    border-radius: 100%;
+    border: 4px solid #FFF;
+    border-right: 6px solid transparent;
+    animation: loading 1s linear infinite;
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
