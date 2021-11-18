@@ -89,7 +89,11 @@ if ($(".contact-page").length) { // Funções que serão ativadas quando a pági
             data: data,
             success: (res) => { //Se enviar a mensagem, a resposta no formulário é exibida.
                 $(".response").html(res.message);
-                $(".response").addClass("success");
+                if (res.message == "Falha no envio do email!") {
+                    $(".response").addClass("error");
+                } else {
+                    $(".response").addClass("success");
+                }
                 $(".response").show();
                 setTimeout(() => {
                     $(".response").hide();
