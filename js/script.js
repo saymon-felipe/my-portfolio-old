@@ -5,10 +5,10 @@ function changeAmbient(ambient) {
     const url_api_test = "http://localhost:3000";
     const url_api_production = "https://saymon-portfolio-api.herokuapp.com";
     switch (ambient) {
-        case "0": 
+        case 0: 
             url_api = url_api_test;
             break;
-        case "1":
+        case 1:
             url_api = url_api_production;
             break;
     }
@@ -83,7 +83,6 @@ if ($(".contact-page").length) { // Funções que serão ativadas quando a pági
         $(".form-input").attr("disabled", true);
         $("#contact-form").find('.response').hide();
         $("#send-form:hover").css("background", "#000");
-
         $.ajax({
             url: url_api + "/contact",
             type: "POST",
