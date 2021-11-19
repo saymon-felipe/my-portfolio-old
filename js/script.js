@@ -110,6 +110,9 @@ if ($(".contact-page").length) { // Funções que serão ativadas quando a pági
                 $("#contact-form").find('.response').addClass("error");
                 $("#contact-form").find('.response').show();
                 $("#contact-form").find(".loading").hide();
+                setTimeout(() => {
+                    $(".response").hide();
+                }, 5000);
             },
             complete: () => {
                 $(".form-input").attr("disabled", false);
