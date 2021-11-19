@@ -58,9 +58,9 @@
     opacity: 0.5;
     position: absolute;
     top: 0;
-    left: -10rem;
+    left: -100vw;
     z-index: 1;
-    width: 200vw;
+    width: 1000vw;
     height: 100%;
 }
 
