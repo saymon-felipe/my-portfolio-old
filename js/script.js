@@ -3,7 +3,7 @@ let url_api;
 // Função para trocar ambiente da api
 function changeAmbient(ambient) {
     const url_api_test = "http://localhost:4800";
-    const url_api_production = "https://138.197.96.115:4800";
+    const url_api_production = "http://138.197.96.115:4800";
     switch (ambient) {
         case 0: 
             url_api = url_api_test;
