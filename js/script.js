@@ -2,7 +2,7 @@ let url_api;
 
 // Função para trocar ambiente da api
 function changeAmbient(ambient) {
-    const url_api_test = "http://localhost:3000";
+    const url_api_test = "http://localhost:4800";
     const url_api_production = "http://138.197.96.115:4800";
     switch (ambient) {
         case 0: 
@@ -116,6 +116,7 @@ if ($(".contact-page").length) { // Funções que serão ativadas quando a pági
                 $(".form-input").val("");
                 $("#contact-form").find(".loading").hide();
                 $("#send-form span").html("enviar");
+                $(".characters-counter").html("0 / 2000 caracteres.");
             }
         });
     })

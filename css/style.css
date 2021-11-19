@@ -499,6 +499,16 @@ h5 {
         text-align: start;
     }
 
+@media (max-width: 768px) {
+    .form-footer {
+        flex-direction: column-reverse;
+        font-size: .9rem;
+    }
+    .characters-counter {
+        position: static!important;
+    }
+}
+
 .error {
     color: red;
 }
