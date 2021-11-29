@@ -37,25 +37,25 @@ function toggleBackground() {
     }
 }
 
+setInterval(toggleBackground, 10000);
+
 function countCharacters(source, target, response) { //Função conta os caracteres do campo de descrição de OS e retorna para a tela.
     let characters = $(source).val();
     let stringLength = characters.length;
     if(stringLength > 2000) {
+        $("#send-form").attr("disabled", "disabled");
         $(target).addClass("error");
         $(response).addClass("error");
         $(response).html("Máximo de caracteres atingidos!");
         $(response).show();
     } else {
+        $("#send-form").attr("disabled", false);
         $(target).removeClass("error");
         $(response).removeClass("error");
         $(response).html("");
         $(response).hide();
     }
     $(target).html(`${characters.length} / 2000 caracteres.`);
-}
-
-if ($(document).length) {
-    setInterval(toggleBackground, 10000);
 }
 
 if ($(".contact-page").length) { // Funções que serão ativadas quando a página de contato carregar.
@@ -161,11 +161,3 @@ if(previewItems.length) {
       animeScroll();
     });
 }
-
-
-
-
-
-
-
-

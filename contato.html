@@ -26,7 +26,7 @@
     </style>
   </head>
   <body class="contact-page background-1">
-    <header id="cabecalho" class="d-flex align-items-center fixed-top">
+    <header id="cabecalho">
       <div id="nav" class="container">
         <nav class="navbar navbar-expand-sm" id="nav" >
 
@@ -50,17 +50,16 @@
                       <a href="sobre-mim.html" class="nav-link">Sobre Mim</a>
                   </li>
                   <li class="nav-item">
-                      <a href="contato.html" class="nav-link">Contato</a>
+                      <a href="contato.html" class="nav-link page-active">Contato</a>
                   </li>
               </ul>
           </div>
         </nav>
       </div>
     </header>
-    
     <section id="section-contato">
-      <div class="container py-5 px-auto contato text-center">
-        <h3 class="title-contact mb-4">CONTATE-ME</h3>
+      <div class="container container-section-contato">
+        <h3 class="title-contact">CONTATE-ME</h3>
         <div class="contact-form-container">
           <form action="sendEmail" id="contact-form">
             <div class="container-inputs">
@@ -82,22 +81,21 @@
           </form>
         </div>
         <form id="formulario">
-          <div class="m-auto d-flex flex-wrap">
-            <fieldset  class="mx-auto my-4 p-3 text-center border">
-              <legend id="contato-container" class="border"><strong>CONTATO</strong></legend>
+          <div class="container-formulario">
+            <fieldset>
+              <legend id="contato-container"><strong>CONTATO</strong></legend>
               <h3><strong>E-Mail: </strong><a href="mailto:linnubr@gmail.com">linnubr@gmail.com</a></h3>
               <h3>
                 <strong>Tel: </strong>
                 <a href="https://wa.me/55043996352536?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio." target="_blank" rel="external">
                   (43) 9 9635-2536
-                  <i class="fab fa-whatsapp fa-lg m-2"></i>
+                  <i class="fab fa-whatsapp fa-lg"></i>
                 </a>
               </h3>
-              
             </fieldset>
-            <fieldset  class="mx-auto my-4 p-3 text-center border">
-              <legend class="border redes-sociais"><strong>REDES SOCIAIS</strong></legend>
-              <div class="d-flex justify-content-around mx-auto">
+            <fieldset>
+              <legend class="redes-sociais"><strong>REDES SOCIAIS</strong></legend>
+              <div class="container-social">
                 <a id="facebook" href="https://www.facebook.com/say.feli10" target="_blank" rel="external">
                   <i class="fab fa-facebook fa-4x"></i>
                 </a>
@@ -110,11 +108,11 @@
               </div>
             </fieldset>
           </div>
-          <div class="container my-5">
-            <div class="text-center">
-              <h1>Veja todos os meus projetos no GitHub</h1>
+          <div class="container">
+            <div class="github-projects">
+              <h1 class="project-text">Veja todos os meus projetos no GitHub</h1>
               <a href="https://github.com/saymon-felipe" target="_blank" rel="external">
-                <i class="fab fa-github fa-10x m-3 mouseover"></i>
+                <i class="fab fa-github fa-10x mouseover"></i>
               </a>
             </div>
           </div>
@@ -124,50 +122,49 @@
     <div id="topo">
       <i class="fas fa-arrow-up fa-2x"></i>
     </div>
-    <footer class="py-5 text-center">
-      <div class="container d-flex flex-wrap justify-content-between justify-content-center container-rodape">
-         <div id="contato" class="text-left p-3">
-           <h4>CONTATO</h4>
-           <a href="mailto:linnubr@gmail.com">linnubr@gmail.com</a> 
-           <a href="https://wa.me/55043996352536?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio." target="_blank" rel="external">
-             <h6>(43) 9 9635-2536</h6>
-           </a>
-         </div>
-         <div id="redes-sociais" class="text-center p-3">
-           <h4>REDES SOCIAIS</h4>
-           <div class="d-flex justify-content-between">
-             <a href="https://www.facebook.com/say.feli10" target="_blank" rel="external">
-               <i class="fab fa-facebook fa-2x"></i>
-             </a>
-             <a href="https://www.instagram.com/saymonf25/" target="_blank" rel="external">
-               <i class="fab fa-instagram fa-2x"></i>
-             </a>
-             <a href="https://www.linkedin.com/in/saymon-felipe-80b31a157/" target="_blank" rel="external">
-               <i class="fab fa-linkedin fa-2x"></i>
-             </a>
-           </div>
-         </div>
-         <div id="mapa-do-site" class="p-3">
-           <h4>MAPA DO SITE</h4>
-           <div>
-             <ul class="navbar-nav text-right">
-                 <li class="nav-item">
-                     <a href="index.html" class="nav-link">Home</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="sobre-mim.html" class="nav-link">Sobre Mim</a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="contato.html" class="nav-link">Contato</a>
-                 </li>
-             </ul>
-         </div>
-         </div>
+    <footer>
+      <div class="container-rodape">
+        <div id="contato">
+          <h4>CONTATO</h4>
+          <a href="mailto:linnubr@gmail.com">linnubr@gmail.com</a> 
+          <a href="https://wa.me/55043996352536?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio." target="_blank" rel="external">
+            <h6>(43) 9 9635-2536</h6>
+          </a>
+        </div>
+        <div id="redes-sociais">
+          <h4>REDES SOCIAIS</h4>
+          <div>
+            <a href="https://www.facebook.com/say.feli10" target="_blank" rel="external">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/saymonf25/" target="_blank" rel="external">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/saymon-felipe-80b31a157/" target="_blank" rel="external">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+          </div>
+        </div>
+        <div id="mapa-do-site">
+          <h4>MAPA DO SITE</h4>
+          <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sobre-mim.html" class="nav-link">Sobre Mim</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </li>
+            </ul>
+        </div>
+        </div>
       </div>
       <h6 class="mt-5">&copy; Copyright 2021 - Saymon Felipe.</h6>
       <h6>by Rabsystems</h6>
     </footer>
-
     <div id="scripts"> 
       <!--SCRIPTS-->
       <script src="js/loadJs.js"></script> <!-- Require JS file -->

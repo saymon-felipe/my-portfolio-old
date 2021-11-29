@@ -18,7 +18,17 @@
     width: 7px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.7);
+}
 
+@media (max-width: 576px) {
+    ::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+}
+
+legend, h1, p, h3, h4, h6 {
+    font-size: 102%;
 }
 
 .carousel {
@@ -41,6 +51,18 @@
     text-align: center;
     z-index: 1;
     position: relative;
+}
+
+@media (max-width: 366px) {
+    .carousel-control {
+        padding: 1rem 0 1rem .7rem;
+    }
+    .carousel h1 {
+        font-size: 2em!important;
+    }
+    .carousel p {
+        font-size: 1em!important;
+    }
 }
 
     .carousel-control:hover {
@@ -72,7 +94,7 @@ html, body {
 
 body {
     color: white;
-    transition: all 1s;
+    transition: 1s;
 }
 
 section {
@@ -107,7 +129,7 @@ header {
 
 #navegacao {
     background: rgba(0, 0, 0, 0.7);
-    padding: 0 10px;   
+    padding: 10px;   
 }
 
 button:focus {
@@ -121,15 +143,21 @@ header .nav-link {
 
 header .nav-item {
     transition: all 0.4s;
+    overflow: hidden;
+}
+
+.page-active {
+    background: var(--gray-high);
+    color: black!important;
 }
 
 header .nav-item:hover {
     background: var(--gray-low);
 }
 
-header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
-    border-right: 1px solid var(--gray-low);
-}
+    header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
+        border-right: 1px solid var(--gray-low);
+    }
 
 @media (max-width: 575px) {
     header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
@@ -137,25 +165,42 @@ header .nav-item:nth-child(1), header .nav-item:nth-child(2) {
     }
 }
 
-header .nav-item:nth-child(1) {
-    border-radius: 5px 0 0 5px;
-}
+    header .nav-item:nth-child(1) {
+        border-radius: 5px 0 0 5px;
+    }
 
-header .nav-item:nth-child(3) {
-    border-radius: 0 5px 5px 0;
-}
+    header .nav-item:nth-child(3) {
+        border-radius: 0 5px 5px 0;
+    }
 
 .navbar .navbar-brand {
     transition: all 0.4s;
 }
 
-.navbar .navbar-brand:hover {
-    opacity: 0.8;
+    .navbar .navbar-brand:hover {
+        opacity: 0.8;
+    }
+
+@media (max-width: 576px) {
+    header .nav-item {
+        overflow: inherit;
+        border-radius: 0!important;
+        margin: .2rem 0;
+    }
 }
 
-#cabecalho i {
-    color: white;
+#cabecalho {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 3;
 }
+
+    #cabecalho i {
+        color: white;
+    }
 
 header .nav-link:hover {
     color: white;
@@ -164,10 +209,32 @@ header .nav-link:hover {
 
 #alinhamento {
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #alinhamento h1, #alinhamento p {
     font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.project-text {
+    margin: auto;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+@media (max-width: 500px) {
+    .project-text {
+        font-size: 2rem!important;
+    }
+}
+
+#sites-cursos, #sites-principais {
+    padding: 3rem 0;
+    text-align: center;
 }
 
 #sites-principais {
@@ -175,8 +242,25 @@ header .nav-link:hover {
     color: black;
 }
 
-.sombra {
+#sites-cursos {
+    color: white;
+    background: transparent;
+}
+
+.sites-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shadow {
     box-shadow: 0 0 10px rgb(182, 182, 182);
+}
+
+.projects-img {
+    width: 500px;
+    margin-bottom: 1.5rem;
 }
 
 .mouseover {
@@ -185,9 +269,9 @@ header .nav-link:hover {
     overflow: hidden;
 }
 
-.mouseover:hover {
-    transform: translateY(-5px);
-}
+    .mouseover:hover {
+        transform: translateY(-5px);
+    }
 
 .preview-item {
     opacity: 0;
@@ -207,6 +291,14 @@ header .nav-link:hover {
     transform: translateX(0);
 }
 
+.preview-item div {
+    margin: 1rem;
+    border: 1px solid var(--gray-high);
+    border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
 #topo {
     background: var(--white);
     border-radius: 5px;
@@ -220,9 +312,9 @@ header .nav-link:hover {
     cursor: pointer;
 }
 
-#topo:hover {
-    background: var(--gray-high);
-}
+    #topo:hover {
+        background: var(--gray-high);
+    }
 
 #sites-cursos a, #sites-principais a {
     text-decoration: none;
@@ -237,17 +329,11 @@ header .nav-link:hover {
 }
 
 @media (min-width: 200px) {
-    .tamanho {
-        width: 290px;
-    }
     #nav {
         margin-top: -8px;
     }
     #alinhamento h1 {
         font-size: 300%;
-    }
-    #alinhamento p {
-        font-size: 150%;
     }
     #topo {
         font-size: .8rem;
@@ -258,9 +344,6 @@ header .nav-link:hover {
 }
 
 @media (min-width: 576px) {
-    .tamanho {
-        width: 350px;
-    }
     #nav {
         margin-top: 0;
     }
@@ -275,26 +358,40 @@ header .nav-link:hover {
     }
 }
 
-@media (min-width: 800px) {
-    .tamanho {
-        width: 500px;
+@media (max-width: 800px) {
+    .projects-img {
+        width: 350px;
+    }
+    .preview-item {
+        width: 350px;
+    }
+}
+
+@media (max-width: 489px) {
+    .projects-img {
+        width: 250px;
+    }
+    .preview-item {
+        max-width: 100%;
     }
 }
 
 footer {
     background: black;
     color: white;
+    padding: 1.5rem 0;
+    text-align: center;
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
-}
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
 
-footer a:hover {
-    color: white;
-    text-decoration: none;
-}
+        footer a:hover {
+            color: white;
+            text-decoration: none;
+        }
 
 /*FIM PÁGINA INICIAL*/
 
@@ -306,6 +403,33 @@ footer a:hover {
 .sobre-mim {
     background: white;
     border-radius: 20px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 0;
+    text-align: center;
+    border: 1px solid var(--gray-high);
+}
+
+.about-main-content {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 0 3rem;
+}
+
+.about-text-content {
+    margin: auto;
+    text-align: left;
+}
+
+    .about-text-content p {
+        margin-top: 2rem;
+    }
+
+@media (max-width: 767px) {
+    .about-text-content {
+        padding-top: 2.5rem;
+        text-align: center;
+    }
 }
 
 h5 {
@@ -313,14 +437,31 @@ h5 {
     color:rgb(71, 71, 71)
 }
 
-@media (min-width: 200px) {
-    #sobre-mim img {
-        width: 290px;
-    }
-    legend, h1, p, h3, h4, h6 {
-        font-size: 80%;
+.container-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-formulario {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#formulario fieldset {
+    width: 80%;
+    margin: 2.5rem auto;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-high);
+}
+
+    #formulario fieldset legend {
+        border: 1px solid var(--gray-high);
     }
 
+@media (min-width: 200px) {
     .container-rodape h4, .container-rodape a, .container-rodape ul li a {
         text-align: center;
     }
@@ -332,13 +473,35 @@ h5 {
     }
 }
 
+#mapa-do-site {
+    text-align: right;
+}
+
+.container-social {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto .5rem;
+}
+
+#contato, #redes-sociais, #mapa-do-site {
+    padding: 3rem 0 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width: 590px) {
+    #contato, #redes-sociais, #mapa-do-site {
+        margin: 0 1rem;
+    }
+}
+
+#redes-sociais a {
+    margin: 0 .3rem;
+}
+
 @media (min-width: 490px) {
-    #sobre-mim img {
-        width: 350px;
-    }
-    legend, h1, p, h3, h4, h6 {
-        font-size: 102%;
-    }
     #contato h4, #contato a, #contato ul li a {
         text-align: left;
     }
@@ -356,10 +519,16 @@ h5 {
     }
 }
 
-@media (min-width: 767px) {
-    #sobre-mim img {
-        width: 500px;
+.github-projects {
+    padding: 1rem 0;
+}
+
+    .github-projects i {
+        margin-top: 1rem;
     }
+
+.title-contact {
+    margin-bottom: 2.5rem;
 }
 
 .title-about, .title-contact {
@@ -382,15 +551,15 @@ h5 {
     transition: all 0.4s;
 }
 
-#sobre-mim fieldset:hover {
-    background-color: rgb(238, 238, 238);
-    cursor: text;
-}
+    #sobre-mim fieldset:hover {
+        background-color: rgb(238, 238, 238);
+        cursor: text;
+    }
 
-#sobre-mim fieldset:hover legend {
-    background-color: rgb(77, 77, 77);
-    color:#fff;
-}
+    #sobre-mim fieldset:hover legend {
+        background-color: rgb(77, 77, 77);
+        color:#fff;
+    }
 
 #formacoes {
     width: 180px;
@@ -400,14 +569,10 @@ h5 {
     width: 220px;
 }
 
-#sobre-mim img.img-fluid {
+#sobre-mim img {
     border-radius: 10px;
     transition: .2s;
-}
-
-#sobre-mim img.img-fluid:hover {
-    padding: 2px;
-    border-radius: 15px;
+    max-width: 100%;
 }
 
 /*FIM SOBRE MIM*/
@@ -439,12 +604,21 @@ h5 {
 }
 
     #contact-form #send-form:hover {
-    background: rgb(51, 51, 51);
+        background: rgb(51, 51, 51);
     }
 
     #contact-form #send-form:active {
-    background: rgb(92, 92, 92);
+        background: rgb(92, 92, 92);
     }
+
+@media (max-width: 495px) {
+    .container-section-contato {
+        padding: 3rem 1.5rem!important;
+    }
+    .contact-form-container, #contact-form, .container-inputs {
+        width: 100%;
+    }
+}
 
 .container-inputs input, .container-inputs textarea {
     margin: 5px 0;
@@ -517,20 +691,22 @@ h5 {
     color: green;
 }
 
-.contato {
-    background: white;
-    border-radius: 20px;
-    margin-top: 110px;
-    margin-bottom: 50px;
-    color: black;
-}
-
 #contato-container {
     width: 100px;
 }
 
 .redes-sociais {
     width: 140px;
+}
+
+.container-section-contato {
+    padding: 3rem;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    color: black;
 }
 
 #section-contato form fieldset {
