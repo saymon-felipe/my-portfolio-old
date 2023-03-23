@@ -161,3 +161,13 @@ if(previewItems.length) {
       animeScroll();
     });
 }
+
+function fillFooterCopyText() {
+    let date = new Date();
+    let year = date.getFullYear();
+    let element = $(".copy-text");
+    let string = `&copy; ${year} - Saymon Felipe.`;
+    element.html(string);
+}
+
+fillFooterCopyText();
